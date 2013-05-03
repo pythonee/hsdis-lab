@@ -1,0 +1,231 @@
+Java HotSpot(TM) Client VM warning: PrintAssembly is enabled; turning on DebugNonSafepoints to gain additional output
+VM option '+PrintAssembly'
+VM option 'CompileCommand=dontinline,*Singleton.getInstance'
+VM option 'CompileCommand=compileonly,*Singleton.getInstance'
+CompilerOracle: dontinline *Singleton.getInstance
+CompilerOracle: compileonly *Singleton.getInstance
+Loaded disassembler from D:\jdk1.6.0_25\fastdebug\jre\bin\client\hsdis-i386.dll
+Decoding compiled method 0x01ceb608:
+Code:
+[Disassembling for mach='i386']
+[Entry Point]
+[Verified Entry Point]
+[Constants]
+  # {method} 'getInstance' '()Ltest/Singleton;' in 'test/Singleton'
+  #           [sp+0x30]  (sp of caller)
+  ;;  block B9 [0, 0]
+
+  0x01ceb730: mov    %eax,-0x8000(%esp)
+  0x01ceb737: push   %ebp
+  0x01ceb738: sub    $0x28,%esp
+  ;;  block B0 [0, 3]
+
+  0x01ceb73b: mov    $0x2024ed20,%eax   ;   {oop('test/Singleton')}
+  0x01ceb740: mov    0x150(%eax),%eax   ;*getstatic instance
+                                        ; - test.Singleton::getInstance@0 (line 8)
+  0x01ceb746: cmp    $0x0,%eax
+  ;;   16 branch [NE] [B3] 
+  0x01ceb749: jne    0x01ceb8ac         ;*ifnonnull
+                                        ; - test.Singleton::getInstance@3 (line 8)
+  ;;  block B2 [6, 15]
+
+  0x01ceb74f: mov    $0x2024ee78,%edx   ;   {oop(a 'java/lang/Class' = 'test/Singleton')}
+  0x01ceb754: lea    0x14(%esp),%esi
+  0x01ceb758: mov    %edx,0x4(%esi)
+  0x01ceb75b: mov    (%edx),%eax        ; implicit exception: dispatches to 0x01ceb91e
+  0x01ceb75d: mov    %eax,%edi
+  0x01ceb75f: and    $0x7,%edi
+  0x01ceb762: cmp    $0x5,%edi
+  0x01ceb765: jne    0x01ceb7f1
+  0x01ceb76b: mov    %eax,(%esi)
+  0x01ceb76d: mov    %fs:0x0(,%eiz,1),%edi
+  0x01ceb775: mov    -0xc(%edi),%edi
+  0x01ceb778: xor    %edi,%eax
+  0x01ceb77a: mov    0x4(%edx),%edi
+  0x01ceb77d: xor    0x68(%edi),%eax
+  0x01ceb780: and    $0xffffff87,%eax
+  0x01ceb783: je     0x01ceb812
+  0x01ceb789: test   $0x7,%eax
+  0x01ceb78e: jne    0x01ceb7e5
+  0x01ceb794: test   $0x180,%eax
+  0x01ceb799: jne    0x01ceb7c3
+  0x01ceb79f: mov    (%esi),%eax
+  0x01ceb7a1: and    $0x1ff,%eax
+  0x01ceb7a7: mov    %fs:0x0(,%eiz,1),%edi
+  0x01ceb7af: mov    -0xc(%edi),%edi
+  0x01ceb7b2: or     %eax,%edi
+  0x01ceb7b4: lock cmpxchg %edi,(%edx)
+  0x01ceb7b8: jne    0x01ceb934
+  0x01ceb7be: jmp    0x01ceb812
+  0x01ceb7c3: mov    %fs:0x0(,%eiz,1),%edi
+  0x01ceb7cb: mov    -0xc(%edi),%edi
+  0x01ceb7ce: mov    0x4(%edx),%eax
+  0x01ceb7d1: or     0x68(%eax),%edi
+  0x01ceb7d4: mov    (%esi),%eax
+  0x01ceb7d6: lock cmpxchg %edi,(%edx)
+  0x01ceb7da: jne    0x01ceb934
+  0x01ceb7e0: jmp    0x01ceb812
+  0x01ceb7e5: mov    (%esi),%eax
+  0x01ceb7e7: mov    0x4(%edx),%edi
+  0x01ceb7ea: mov    0x68(%edi),%edi
+  0x01ceb7ed: lock cmpxchg %edi,(%edx)
+  0x01ceb7f1: mov    (%edx),%eax
+  0x01ceb7f3: or     $0x1,%eax
+  0x01ceb7f6: mov    %eax,(%esi)
+  0x01ceb7f8: lock cmpxchg %esi,(%edx)
+  0x01ceb7fc: je     0x01ceb812
+  0x01ceb802: sub    %esp,%eax
+  0x01ceb804: and    $0xfffff003,%eax
+  0x01ceb80a: mov    %eax,(%esi)
+  0x01ceb80c: jne    0x01ceb934         ;*monitorenter
+                                        ; - test.Singleton::getInstance@11 (line 9)
+  0x01ceb812: mov    $0x2024ed20,%edx   ;   {oop('test/Singleton')}
+  0x01ceb817: mov    0x150(%edx),%edx   ;*getstatic instance
+                                        ; - test.Singleton::getInstance@12 (line 10)
+  0x01ceb81d: cmp    $0x0,%edx
+  ;;   40 branch [NE] [B6] 
+  0x01ceb820: jne    0x01ceb87e         ;*ifnonnull
+                                        ; - test.Singleton::getInstance@15 (line 10)
+  ;;  block B5 [18, 28]
+
+  0x01ceb826: mov    $0x2024ed20,%edx   ;   {oop('test/Singleton')}
+  0x01ceb82b: mov    %fs:0x0(,%eiz,1),%ecx
+  0x01ceb833: mov    -0xc(%ecx),%ecx
+  0x01ceb836: mov    0x44(%ecx),%eax
+  0x01ceb839: lea    0x8(%eax),%edi
+  0x01ceb83c: cmp    0x4c(%ecx),%edi
+  0x01ceb83f: ja     0x01ceb945
+  0x01ceb845: mov    %edi,0x44(%ecx)
+  0x01ceb848: mov    0x68(%edx),%ecx
+  0x01ceb84b: mov    %ecx,(%eax)
+  0x01ceb84d: mov    %edx,0x4(%eax)
+  0x01ceb850: xor    %ecx,%ecx          ;*new  ; - test.Singleton::getInstance@18 (line 11)
+  0x01ceb852: mov    %eax,%ecx          ;*invokespecial <init>
+                                        ; - test.Singleton::getInstance@22 (line 11)
+  0x01ceb854: mov    %eax,0x10(%esp)
+  0x01ceb858: nop    
+  0x01ceb859: nop    
+  0x01ceb85a: nop    
+  0x01ceb85b: call   0x01caafd0         ; OopMap{[16]=Oop [24]=Oop off=304}
+                                        ;*invokespecial <init>
+                                        ; - test.Singleton::getInstance@22 (line 11)
+                                        ;   {optimized virtual_call}
+  0x01ceb860: mov    $0x2024ed20,%eax   ;   {oop('test/Singleton')}
+  0x01ceb865: mov    0x10(%esp),%esi
+  0x01ceb869: mov    %esi,0x150(%eax)
+  0x01ceb86f: shr    $0x9,%eax
+  0x01ceb872: movb   $0x0,0x47ff80(%eax)
+  0x01ceb879: lock addl $0x0,(%esp)     ;*putstatic instance
+                                        ; - test.Singleton::getInstance@25 (line 11)
+  ;;  block B6 [28, 30]
+
+  0x01ceb87e: mov    $0x2024ee78,%eax   ;   {oop(a 'java/lang/Class' = 'test/Singleton')}
+  0x01ceb883: lea    0x14(%esp),%eax
+  0x01ceb887: mov    0x4(%eax),%edi
+  0x01ceb88a: mov    (%edi),%esi
+  0x01ceb88c: and    $0x7,%esi
+  0x01ceb88f: cmp    $0x5,%esi
+  0x01ceb892: je     0x01ceb8ac
+  0x01ceb898: mov    (%eax),%esi
+  0x01ceb89a: test   %esi,%esi
+  0x01ceb89c: je     0x01ceb8ac
+  0x01ceb8a2: lock cmpxchg %esi,(%edi)
+  0x01ceb8a6: jne    0x01ceb951         ;*monitorexit
+                                        ; - test.Singleton::getInstance@29 (line 13)
+  ;;  block B3 [38, 41]
+
+  0x01ceb8ac: mov    $0x2024ed20,%eax   ;   {oop('test/Singleton')}
+  0x01ceb8b1: mov    0x150(%eax),%eax   ;*getstatic instance
+                                        ; - test.Singleton::getInstance@38 (line 15)
+  0x01ceb8b7: add    $0x28,%esp
+  0x01ceb8ba: pop    %ebp
+  0x01ceb8bb: test   %eax,0x1f0100      ;   {poll_return}
+  0x01ceb8c1: ret                       ;*areturn
+                                        ; - test.Singleton::getInstance@41 (line 15)
+  ;;  block B1 [33, 37]
+
+  0x01ceb8c2: mov    %fs:0x0(,%eiz,1),%esi
+  0x01ceb8ca: mov    -0xc(%esi),%esi
+  0x01ceb8cd: mov    0x198(%esi),%eax
+  0x01ceb8d3: movl   $0x0,0x198(%esi)
+  0x01ceb8dd: movl   $0x0,0x19c(%esi)
+  0x01ceb8e7: mov    %eax,%esi
+  0x01ceb8e9: mov    $0x2024ee78,%eax   ;   {oop(a 'java/lang/Class' = 'test/Singleton')}
+  0x01ceb8ee: lea    0x14(%esp),%eax
+  0x01ceb8f2: mov    0x4(%eax),%ebx
+  0x01ceb8f5: mov    (%ebx),%edi
+  0x01ceb8f7: and    $0x7,%edi
+  0x01ceb8fa: cmp    $0x5,%edi
+  0x01ceb8fd: je     0x01ceb917
+  0x01ceb903: mov    (%eax),%edi
+  0x01ceb905: test   %edi,%edi
+  0x01ceb907: je     0x01ceb917
+  0x01ceb90d: lock cmpxchg %edi,(%ebx)
+  0x01ceb911: jne    0x01ceb962         ;*monitorexit
+                                        ; - test.Singleton::getInstance@35 (line 13)
+  0x01ceb917: mov    %esi,%eax
+  0x01ceb919: jmp    0x01ceb997
+  ;; ImplicitNullCheckStub slow case
+  0x01ceb91e: call   0x01ce83e0         ; OopMap{edx=Oop off=499}
+                                        ;*monitorenter
+                                        ; - test.Singleton::getInstance@11 (line 9)
+                                        ;   {runtime_call}
+  0x01ceb923: push   $0x83c5c18         ;   {external_word}
+  0x01ceb928: call   0x01ceb92d
+  0x01ceb92d: pusha  
+  0x01ceb92e: call   0x0822bec0         ;   {runtime_call}
+  0x01ceb933: hlt    
+  ;; MonitorEnterStub slow case
+  0x01ceb934: mov    %edx,0x4(%esp)
+  0x01ceb938: mov    %esi,(%esp)
+  0x01ceb93b: call   0x01cea6a0         ; OopMap{edx=Oop [24]=Oop off=528}
+                                        ;*monitorenter
+                                        ; - test.Singleton::getInstance@11 (line 9)
+                                        ;   {runtime_call}
+  0x01ceb940: jmp    0x01ceb812
+  ;; NewInstanceStub slow case
+  0x01ceb945: mov    %edx,%edx
+  0x01ceb947: call   0x01ce8950         ; OopMap{[24]=Oop off=540}
+                                        ;*new  ; - test.Singleton::getInstance@18 (line 11)
+                                        ;   {runtime_call}
+  0x01ceb94c: jmp    0x01ceb852
+  ;; MonitorExitStub slow case
+  0x01ceb951: lea    0x14(%esp),%eax
+  0x01ceb955: mov    %eax,(%esp)
+  0x01ceb958: call   0x01cea960         ;   {runtime_call}
+  0x01ceb95d: jmp    0x01ceb8ac
+  ;; MonitorExitStub slow case
+  0x01ceb962: lea    0x14(%esp),%eax
+  0x01ceb966: mov    %eax,(%esp)
+  0x01ceb969: call   0x01cea960         ;   {runtime_call}
+  0x01ceb96e: jmp    0x01ceb917
+  0x01ceb970: nop    
+  0x01ceb971: nop    
+  ;; Unwind handler
+  0x01ceb972: mov    %fs:0x0(,%eiz,1),%esi
+  0x01ceb97a: mov    -0xc(%esi),%esi
+  0x01ceb97d: mov    0x198(%esi),%eax
+  0x01ceb983: movl   $0x0,0x198(%esi)
+  0x01ceb98d: movl   $0x0,0x19c(%esi)
+  0x01ceb997: add    $0x28,%esp
+  0x01ceb99a: pop    %ebp
+  0x01ceb99b: jmp    0x01ce7be0         ;   {runtime_call}
+[Stub Code]
+  0x01ceb9a0: nop                       ;   {no_reloc}
+  0x01ceb9a1: nop    
+  0x01ceb9a2: mov    $0x0,%ebx          ;   {static_stub}
+  0x01ceb9a7: jmp    0x01ceb9a7         ;   {runtime_call}
+[Exception Handler]
+  0x01ceb9ac: mov    $0xdead,%ebx
+  0x01ceb9b1: mov    $0xdead,%ecx
+  0x01ceb9b6: mov    $0xdead,%esi
+  0x01ceb9bb: mov    $0xdead,%edi
+  0x01ceb9c0: call   0x01ce9c40         ;   {runtime_call}
+  0x01ceb9c5: push   $0x83c5c18         ;   {external_word}
+  0x01ceb9ca: call   0x01ceb9cf
+  0x01ceb9cf: pusha  
+  0x01ceb9d0: call   0x0822bec0         ;   {runtime_call}
+  0x01ceb9d5: hlt    
+[Deopt Handler Code]
+  0x01ceb9d6: push   $0x1ceb9d6         ;   {section_word}
+  0x01ceb9db: jmp    0x01cabac0         ;   {runtime_call}

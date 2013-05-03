@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hotspot_log version='160 1' process='7688' time_ms='1367559891530'>
+<vm_version>
+<name>
+Java HotSpot(TM) Client VM
+</name>
+<release>
+20.0-b10-fastdebug
+</release>
+<info>
+Java HotSpot(TM) Client VM (20.0-b10-fastdebug) for windows-x86 JRE (1.6.0_25-ea-fastdebug-b03), built on Feb 27 2011 03:51:39 by &quot;java_re&quot; with MS VC++ 7.1 (VS2003)
+</info>
+</vm_version>
+<vm_arguments>
+<args>
+-XX:+PrintAssembly -Xcomp -XX:CompileCommand=dontinline,*ConcurrentHashMapTest.update* -XX:CompileCommand=compileonly,*ConcurrentHashMapTest.update* 
+</args>
+<command>
+thread.ConcurrentHashMapTest
+</command>
+<launcher>
+SUN_STANDARD
+</launcher>
+<properties>
+java.vm.specification.name=Java Virtual Machine Specification
+java.vm.version=20.0-b10-fastdebug
+java.vm.name=Java HotSpot(TM) Client VM
+java.vm.info=compiled mode, sharing
+java.ext.dirs=D:\jdk1.6.0_25\fastdebug\jre\lib\ext;C:\Windows\Sun\Java\lib\ext
+java.endorsed.dirs=D:\jdk1.6.0_25\fastdebug\jre\lib\endorsed
+sun.boot.library.path=D:\jdk1.6.0_25\fastdebug\jre\bin
+java.library.path=D:\jdk1.6.0_25\fastdebug\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\Perl\site\bin;D:\Perl\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\TortoiseSVN\bin;d:\WinSCP\;C:\Program Files\ATI Technologies\ATI.ACE\Core-Static;D:\Ruby193\bin;D:\MySQL\MySQL Server 5.5\bin;C:\Users\WangFei\AppData\Roaming\npm;C:\Program Files\nodejs\;D:\play-2.0.3;D:\go\bin;D:\Graphviz 2.28\bin;D:\erl5.9.1\bin;d:\MiKTeX 2.9\miktex\bin\;D:\ragel-vs2008\Ragel 6.7\bin;D:\Python27;d:\Ruby193\bin;D:\google_appengine\;D:\jdk1.6.0_25\fastdebug\bin
+java.home=D:\jdk1.6.0_25\fastdebug\jre
+java.class.path=.
+sun.boot.class.path=D:\jdk1.6.0_25\fastdebug\jre\lib\resources.jar;D:\jdk1.6.0_25\fastdebug\jre\lib\rt.jar;D:\jdk1.6.0_25\fastdebug\jre\lib\sunrsasign.jar;D:\jdk1.6.0_25\fastdebug\jre\lib\jsse.jar;D:\jdk1.6.0_25\fastdebug\jre\lib\jce.jar;D:\jdk1.6.0_25\fastdebug\jre\lib\charsets.jar;D:\jdk1.6.0_25\fastdebug\jre\lib\modules\jdk.boot.jar;D:\jdk1.6.0_25\fastdebug\jre\classes
+java.vm.specification.vendor=Sun Microsystems Inc.
+java.vm.specification.version=1.0
+java.vm.vendor=Sun Microsystems Inc.
+sun.java.command=thread.ConcurrentHashMapTest
+sun.java.launcher=SUN_STANDARD
+</properties>
+</vm_arguments>
+<tty>
+Java HotSpot(TM) Client VM warning: PrintAssembly is enabled; turning on DebugNonSafepoints to gain additional output
+<writer thread='3964'/>
+CompilerOracle: dontinline *ConcurrentHashMapTest.update*
+CompilerOracle: compileonly *ConcurrentHashMapTest.update*
+<writer thread='7564'/>
+Loaded disassembler from D:\jdk1.6.0_25\fastdebug\jre\bin\client\hsdis-i386.dll
+Decoding compiled method 0x01bbb608:
+Code:
+[Disassembling for mach=&apos;i386&apos;]
+[Entry Point]
+[Constants]
+  # {method} &apos;update1&apos; &apos;()V&apos; in &apos;thread/ConcurrentHashMapTest&apos;
+  #           [sp+0x20]  (sp of caller)
+  ;;  block B1 [0, 0]
+
+  0x01bbb710: nop    
+  0x01bbb711: nop    
+  0x01bbb712: nop    
+  0x01bbb713: nop    
+  0x01bbb714: nop    
+  0x01bbb715: nop    
+  0x01bbb716: nop    
+  0x01bbb717: cmp    0x4(%ecx),%eax
+  0x01bbb71a: jne    0x01b7ad90         ;   {runtime_call}
+[Verified Entry Point]
+  0x01bbb720: mov    %eax,-0x8000(%esp)
+  0x01bbb727: push   %ebp
+  0x01bbb728: sub    $0x18,%esp         ;*aload_0
+                                        ; - thread.ConcurrentHashMapTest::update1@0 (line 10)
+  ;;  block B0 [0, 8]
+
+  0x01bbb72b: mov    0x8(%ecx),%esi     ;*getfield e
+                                        ; - thread.ConcurrentHashMapTest::update1@1 (line 10)
+  0x01bbb72e: movl   $0x2,0x8(%esi)     ;*putfield i
+                                        ; - thread.ConcurrentHashMapTest::update1@5 (line 10)
+                                        ; implicit exception: dispatches to 0x01bbb740
+  0x01bbb735: add    $0x18,%esp
+  0x01bbb738: pop    %ebp
+  0x01bbb739: test   %eax,0x3d0100      ;   {poll_return}
+  0x01bbb73f: ret    
+  ;; ImplicitNullCheckStub slow case
+  0x01bbb740: call   0x01bb83e0         ; OopMap{off=53}
+                                        ;*putfield i
+                                        ; - thread.ConcurrentHashMapTest::update1@5 (line 10)
+                                        ;   {runtime_call}
+  0x01bbb745: push   $0x83c5c18         ;   {external_word}
+  0x01bbb74a: call   0x01bbb74f
+  0x01bbb74f: pusha  
+  0x01bbb750: call   0x0822bec0         ;   {runtime_call}
+  0x01bbb755: hlt    
+  0x01bbb756: nop    
+  0x01bbb757: nop    
+  ;; Unwind handler
+  0x01bbb758: mov    %fs:0x0(,%eiz,1),%esi
+  0x01bbb760: mov    -0xc(%esi),%esi
+  0x01bbb763: mov    0x198(%esi),%eax
+  0x01bbb769: movl   $0x0,0x198(%esi)
+  0x01bbb773: movl   $0x0,0x19c(%esi)
+  0x01bbb77d: add    $0x18,%esp
+  0x01bbb780: pop    %ebp
+  0x01bbb781: jmp    0x01bb7be0         ;   {runtime_call}
+  0x01bbb786: hlt    
+  0x01bbb787: hlt    
+  0x01bbb788: hlt    
+  0x01bbb789: hlt    
+  0x01bbb78a: hlt    
+  0x01bbb78b: hlt    
+  0x01bbb78c: hlt    
+  0x01bbb78d: hlt    
+  0x01bbb78e: hlt    
+  0x01bbb78f: hlt    
+[Exception Handler]
+[Stub Code]
+  0x01bbb790: mov    $0xdead,%ebx       ;   {no_reloc}
+  0x01bbb795: mov    $0xdead,%ecx
+  0x01bbb79a: mov    $0xdead,%esi
+  0x01bbb79f: mov    $0xdead,%edi
+  0x01bbb7a4: call   0x01bb9c40         ;   {runtime_call}
+  0x01bbb7a9: push   $0x83c5c18         ;   {external_word}
+  0x01bbb7ae: call   0x01bbb7b3
+  0x01bbb7b3: pusha  
+  0x01bbb7b4: call   0x0822bec0         ;   {runtime_call}
+  0x01bbb7b9: hlt    
+[Deopt Handler Code]
+  0x01bbb7ba: push   $0x1bbb7ba         ;   {section_word}
+  0x01bbb7bf: jmp    0x01b7bac0         ;   {runtime_call}
+Decoding compiled method 0x01bbb888:
+Code:
+[Disassembling for mach=&apos;i386&apos;]
+[Entry Point]
+[Constants]
+  # {method} &apos;update2&apos; &apos;()V&apos; in &apos;thread/ConcurrentHashMapTest&apos;
+  #           [sp+0x20]  (sp of caller)
+  ;;  block B1 [0, 0]
+
+  0x01bbb990: nop    
+  0x01bbb991: nop    
+  0x01bbb992: nop    
+  0x01bbb993: nop    
+  0x01bbb994: nop    
+  0x01bbb995: nop    
+  0x01bbb996: nop    
+  0x01bbb997: cmp    0x4(%ecx),%eax
+  0x01bbb99a: jne    0x01b7ad90         ;   {runtime_call}
+[Verified Entry Point]
+  0x01bbb9a0: mov    %eax,-0x8000(%esp)
+  0x01bbb9a7: push   %ebp
+  0x01bbb9a8: sub    $0x18,%esp         ;*aload_0
+                                        ; - thread.ConcurrentHashMapTest::update2@0 (line 14)
+  ;;  block B0 [0, 13]
+
+  0x01bbb9ab: mov    0xc(%ecx),%esi     ;*getfield ve
+                                        ; - thread.ConcurrentHashMapTest::update2@1 (line 14)
+  0x01bbb9ae: mov    0x8(%esi),%edi     ;*getfield i
+                                        ; - thread.ConcurrentHashMapTest::update2@5 (line 14)
+                                        ; implicit exception: dispatches to 0x01bbb9c5
+  0x01bbb9b1: inc    %edi
+  0x01bbb9b2: mov    %edi,0x8(%esi)
+  0x01bbb9b5: lock addl $0x0,(%esp)     ;*putfield i
+                                        ; - thread.ConcurrentHashMapTest::update2@10 (line 14)
+  0x01bbb9ba: add    $0x18,%esp
+  0x01bbb9bd: pop    %ebp
+  0x01bbb9be: test   %eax,0x3d0100      ;   {poll_return}
+  0x01bbb9c4: ret    
+  ;; ImplicitNullCheckStub slow case
+  0x01bbb9c5: call   0x01bb83e0         ; OopMap{esi=Oop off=58}
+                                        ;*getfield i
+                                        ; - thread.ConcurrentHashMapTest::update2@5 (line 14)
+                                        ;   {runtime_call}
+  0x01bbb9ca: push   $0x83c5c18         ;   {external_word}
+  0x01bbb9cf: call   0x01bbb9d4
+  0x01bbb9d4: pusha  
+  0x01bbb9d5: call   0x0822bec0         ;   {runtime_call}
+  0x01bbb9da: hlt    
+  0x01bbb9db: nop    
+  0x01bbb9dc: nop    
+  ;; Unwind handler
+  0x01bbb9dd: mov    %fs:0x0(,%eiz,1),%esi
+  0x01bbb9e5: mov    -0xc(%esi),%esi
+  0x01bbb9e8: mov    0x198(%esi),%eax
+  0x01bbb9ee: movl   $0x0,0x198(%esi)
+  0x01bbb9f8: movl   $0x0,0x19c(%esi)
+  0x01bbba02: add    $0x18,%esp
+  0x01bbba05: pop    %ebp
+  0x01bbba06: jmp    0x01bb7be0         ;   {runtime_call}
+  0x01bbba0b: hlt    
+  0x01bbba0c: hlt    
+  0x01bbba0d: hlt    
+  0x01bbba0e: hlt    
+  0x01bbba0f: hlt    
+[Exception Handler]
+[Stub Code]
+  0x01bbba10: mov    $0xdead,%ebx       ;   {no_reloc}
+  0x01bbba15: mov    $0xdead,%ecx
+  0x01bbba1a: mov    $0xdead,%esi
+  0x01bbba1f: mov    $0xdead,%edi
+  0x01bbba24: call   0x01bb9c40         ;   {runtime_call}
+  0x01bbba29: push   $0x83c5c18         ;   {external_word}
+  0x01bbba2e: call   0x01bbba33
+  0x01bbba33: pusha  
+  0x01bbba34: call   0x0822bec0         ;   {runtime_call}
+  0x01bbba39: hlt    
+[Deopt Handler Code]
+  0x01bbba3a: push   $0x1bbba3a         ;   {section_word}
+  0x01bbba3f: jmp    0x01b7bac0         ;   {runtime_call}
+<writer thread='3964'/>
+C1 Runtime statistics:
+ _resolve_invoke_virtual_cnt:     0
+ _resolve_invoke_opt_virtual_cnt: 0
+ _resolve_invoke_static_cnt:      0
+ _handle_wrong_method_cnt:        0
+ _ic_miss_cnt:                    0
+ _generic_arraycopy_cnt:          0
+ _primitive_arraycopy_cnt:        0
+ _oop_arraycopy_cnt:              0
+ _arraycopy_slowcase_cnt:         0
+ _new_type_array_slowcase_cnt:    0
+ _new_object_array_slowcase_cnt:  0
+ _new_instance_slowcase_cnt:      0
+ _new_multi_array_slowcase_cnt:   0
+ _monitorenter_slowcase_cnt:      0
+ _monitorexit_slowcase_cnt:       0
+ _patch_code_slowcase_cnt:        0
+ _throw_range_check_exception_count:            0:
+ _throw_index_exception_count:                  0:
+ _throw_div0_exception_count:                   0:
+ _throw_null_pointer_exception_count:           0:
+ _throw_class_cast_exception_count:             0:
+ _throw_incompatible_class_change_error_count:  0:
+ _throw_array_store_exception_count:            0:
+ _throw_count:                                  0:
+
+<statistics type='nmethod'>
+Statistics for 2 bytecoded nmethods:
+ total in heap  = 1200
+ relocation     = 80
+ main code      = 256
+ stub code      = 104
+ oops           = 8
+ scopes data    = 64
+ scopes pcs     = 208
+ dependencies   = 8
+ nul chk table  = 24
+Debug Data Chunks: 11, shared 0+0, non-SP&apos;s elided 0
+PcDesc Statistics:  110 queries, 1.49 comparisons per query
+  caches=2 queries=110/110, hits=96+5, tests=140+24, adds=9
+</statistics>
+<writer thread='2148'/>
+<destroy_vm stamp='0.241'/>
+<tty_done stamp='0.262'/>
+</tty>
+<hotspot_log_done stamp='0.262'/>
+</hotspot_log>

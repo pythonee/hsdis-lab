@@ -1,0 +1,79 @@
+Java HotSpot(TM) Client VM warning: PrintAssembly is enabled; turning on DebugNonSafepoints to gain additional output
+VM option '+PrintAssembly'
+VM option 'CompileCommand=dontinline,*Bar.sum'
+VM option 'CompileCommand=compileonly,*Bar.sum'
+CompilerOracle: dontinline *Bar.sum
+CompilerOracle: compileonly *Bar.sum
+Loaded disassembler from D:\jdk1.6.0_25\fastdebug\jre\bin\client\hsdis-i386.dll
+Decoding compiled method 0x01b3b608:
+Code:
+[Disassembling for mach='i386']
+[Entry Point]
+[Constants]
+  # {method} 'sum' '(I)I' in 'test/Bar'
+  # this:     ecx       = 'test/Bar'
+  # parm0:    edx       = int
+  #           [sp+0x20]  (sp of caller)
+  ;;  block B1 [0, 0]
+
+  0x01b3b700: nop    
+  0x01b3b701: nop    
+  0x01b3b702: nop    
+  0x01b3b703: nop    
+  0x01b3b704: nop    
+  0x01b3b705: nop    
+  0x01b3b706: nop    
+  0x01b3b707: cmp    0x4(%ecx),%eax
+  0x01b3b70a: jne    0x01afad90         ;   {runtime_call}
+[Verified Entry Point]
+  0x01b3b710: mov    %eax,-0x8000(%esp)
+  0x01b3b717: push   %ebp
+  0x01b3b718: sub    $0x18,%esp         ;*aload_0
+                                        ; - test.Bar::sum@0 (line 8)
+  ;;  block B0 [0, 10]
+
+  0x01b3b71b: mov    0x8(%ecx),%eax     ;*getfield a
+                                        ; - test.Bar::sum@1 (line 8)
+  0x01b3b71e: mov    $0x2024ed08,%esi   ;   {oop('test/Bar')}
+  0x01b3b723: mov    0x150(%esi),%esi   ;*getstatic b
+                                        ; - test.Bar::sum@4 (line 8)
+  0x01b3b729: add    %esi,%eax
+  0x01b3b72b: add    %edx,%eax
+  0x01b3b72d: add    $0x18,%esp
+  0x01b3b730: pop    %ebp
+  0x01b3b731: test   %eax,0x3f0100      ;   {poll_return}
+  0x01b3b737: ret    
+  0x01b3b738: nop    
+  0x01b3b739: nop    
+  ;; Unwind handler
+  0x01b3b73a: mov    %fs:0x0(,%eiz,1),%esi
+  0x01b3b742: mov    -0xc(%esi),%esi
+  0x01b3b745: mov    0x198(%esi),%eax
+  0x01b3b74b: movl   $0x0,0x198(%esi)
+  0x01b3b755: movl   $0x0,0x19c(%esi)
+  0x01b3b75f: add    $0x18,%esp
+  0x01b3b762: pop    %ebp
+  0x01b3b763: jmp    0x01b37be0         ;   {runtime_call}
+  0x01b3b768: hlt    
+  0x01b3b769: hlt    
+  0x01b3b76a: hlt    
+  0x01b3b76b: hlt    
+  0x01b3b76c: hlt    
+  0x01b3b76d: hlt    
+  0x01b3b76e: hlt    
+  0x01b3b76f: hlt    
+[Exception Handler]
+[Stub Code]
+  0x01b3b770: mov    $0xdead,%ebx       ;   {no_reloc}
+  0x01b3b775: mov    $0xdead,%ecx
+  0x01b3b77a: mov    $0xdead,%esi
+  0x01b3b77f: mov    $0xdead,%edi
+  0x01b3b784: call   0x01b39c40         ;   {runtime_call}
+  0x01b3b789: push   $0x83c5c18         ;   {external_word}
+  0x01b3b78e: call   0x01b3b793
+  0x01b3b793: pusha  
+  0x01b3b794: call   0x0822bec0         ;   {runtime_call}
+  0x01b3b799: hlt    
+[Deopt Handler Code]
+  0x01b3b79a: push   $0x1b3b79a         ;   {section_word}
+  0x01b3b79f: jmp    0x01afbac0         ;   {runtime_call}
